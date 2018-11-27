@@ -1,0 +1,10 @@
+python==3.6
+cffi==1.11.5
+easydict==1.8
+matplotlib==2.2.3
+opencv-python-headless==3.4.2.17
+PyYAML==3.13
+scipy==1.1.0
+tensorboard-pytorch==0.7.1
+torch==0.4.0
+torchvision==0.2.1
