@@ -19,14 +19,15 @@ Copy the dataset into a folder /path/to/dataset which contains the images and an
 * activate python environment with pytorch installed and add current directory to the PYTHONPATH, e.g.:
 
 ```bash
-source activate pytorch
+git clone https://github.com/fkluger/road_damage_2018.git
+cd road_damage_2018
+pip install -r requirements.txt
 export PYTHONPATH=./
 ```
 * get code and compile some stuff: 
 
 ```bash
-git clone 
-cd pytorch_faster_rcnn/lib
+cd lib
 bash make.sh 
 cd ../
 cd data/coco/PythonAPI
