@@ -44,7 +44,7 @@ cd ../../..
 ln -s  /path/to/dataset data/rddc_2018
 ```
 
-* Save the pretrained model from [this Google Drive](https://drive.google.com/open?id=1MQFG-mdWB8Kaug8232vvuI_5kxzS8bNs)
+* Save the pretrained model from [this Google Drive](https://drive.google.com/open?id=1PDQEXZv5LNuiswFVrJwpD2snGFFjccnk)
 into the `checkpoints` folder.
 
 * Compute detections on the test set, replace [GPU_ID] with the ID of the GPU to use (or omit it for CPU mode):
