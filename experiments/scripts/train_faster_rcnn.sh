@@ -6,8 +6,8 @@ set -e
 export PYTHONUNBUFFERED="True"
 
 GPU_ID=$1
-DATASET=$2
-NET=$3
+DATASET=rddc
+NET=res101
 
 array=( $@ )
 len=${#array[@]}
@@ -15,60 +15,12 @@ EXTRA_ARGS=${array[@]:3:$len}
 EXTRA_ARGS_SLUG=${EXTRA_ARGS// /_}
 
 case ${DATASET} in
-  pascal_voc)
-    TRAIN_IMDB="voc_2007_trainval"
-    TEST_IMDB="voc_2007_test"
-    STEPSIZE="[50000]"
-    ITERS=70000
-    ANCHORS="[8,16,32]"
-    RATIOS="[0.5,1,2]"
-    ;;
-  pascal_voc_0712)
-    TRAIN_IMDB="voc_2007_trainval+voc_2012_trainval"
-    TEST_IMDB="voc_2007_test"
-    STEPSIZE="[80000]"
-    ITERS=220000
-    ANCHORS="[8,16,32]"
-    RATIOS="[0.5,1,2]"
-    ;;
   rddc)
     TRAIN_IMDB="rddc_2018_train"
     TEST_IMDB="rddc_2018_val"
     STEPSIZE="[80000]"
     ITERS=220000
     ANCHORS="[8,16,32]"
-    RATIOS="[0.5,1,2]"
-    ;;
-  rddc_rgba)
-    TRAIN_IMDB="rddc_2018rgba_train"
-    TEST_IMDB="rddc_2018rgba_val"
-    STEPSIZE="[80000]"
-    ITERS=220000
-    ANCHORS="[8,16,32]"
-    RATIOS="[0.5,1,2]"
-    ;;
-  rddc_augmented_d40)
-    TRAIN_IMDB="rddc_augmented_d40_train"
-    TEST_IMDB="rddc_augmented_d40_val"
-    STEPSIZE="[80000]"
-    ITERS=220000
-    ANCHORS="[8,16,32]"
-    RATIOS="[0.5,1,2]"
-    ;;
-  rddc_augmented_180921)
-    TRAIN_IMDB="rddc_augmented_180921_train"
-    TEST_IMDB="rddc_augmented_180921_val"
-    STEPSIZE="[80000]"
-    ITERS=220000
-    ANCHORS="[8,16,32]"
-    RATIOS="[0.5,1,2]"
-    ;;
-  coco)
-    TRAIN_IMDB="coco_2014_train+coco_2014_valminusminival"
-    TEST_IMDB="coco_2014_minival"
-    STEPSIZE="[350000]"
-    ITERS=490000
-    ANCHORS="[4,8,16,32]"
     RATIOS="[0.5,1,2]"
     ;;
   *)
